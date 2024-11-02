@@ -53,7 +53,6 @@ def clear_database():
 
 
 def create_relationship(user1_name, user2_name, relationship_type):
-    # Usando uma f-string para garantir a formatação correta
     query = f"""
     MATCH (u1:User {{name: $user1_name}}), (u2:User {{name: $user2_name}})
     CREATE (u1)-[r:{relationship_type.upper()}]->(u2)
